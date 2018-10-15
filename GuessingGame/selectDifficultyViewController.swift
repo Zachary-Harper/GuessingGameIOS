@@ -19,11 +19,13 @@ class SelectDifficultyViewController: UIViewController {
         switch segue.identifier {
         case "EasyButtonToGame":
             guessingGameViewController.maximumNumber = 50
-            
+            guessingGameViewController.guessesRemaining = 10
         case "HardGame":
-            break
+            guessingGameViewController.maximumNumber = 500
+            guessingGameViewController.guessesRemaining = 5
         case "MediumGame":
-            break
+            guessingGameViewController.maximumNumber = 150
+            guessingGameViewController.guessesRemaining = 5
         default:
             break
         }

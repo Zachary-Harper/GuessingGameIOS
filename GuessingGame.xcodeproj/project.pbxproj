@@ -13,6 +13,7 @@
 		83A6FE07216CF82400088D8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A6FE05216CF82400088D8D /* Main.storyboard */; };
 		83A6FE09216CF82500088D8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A6FE08216CF82500088D8D /* Assets.xcassets */; };
 		83A6FE0C216CF82500088D8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83A6FE0A216CF82500088D8D /* LaunchScreen.storyboard */; };
+		83DFB7D1217120BC00EEF7B9 /* CustomGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DFB7D0217120BC00EEF7B9 /* CustomGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		83A6FE08216CF82500088D8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83A6FE0B216CF82500088D8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83A6FE0D216CF82500088D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83DFB7D0217120BC00EEF7B9 /* CustomGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				83A6FE0A216CF82500088D8D /* LaunchScreen.storyboard */,
 				83A6FE0D216CF82500088D8D /* Info.plist */,
 				838E76E3216E879E0022BC20 /* selectDifficultyViewController.swift */,
+				83DFB7D0217120BC00EEF7B9 /* CustomGameViewController.swift */,
 			);
 			path = GuessingGame;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				838E76E4216E879E0022BC20 /* selectDifficultyViewController.swift in Sources */,
+				83DFB7D1217120BC00EEF7B9 /* CustomGameViewController.swift in Sources */,
 				83A6FE04216CF82400088D8D /* ViewController.swift in Sources */,
 				83A6FE02216CF82400088D8D /* AppDelegate.swift in Sources */,
 			);

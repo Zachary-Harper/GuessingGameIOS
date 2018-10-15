@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberRange: UILabel!
     @IBOutlet weak var guessHereField: UITextField!
     
-    @IBOutlet weak var playAgainButtonOUtlet: UIButton!
+    
+    @IBOutlet weak var playAgainButtonOutlet: UIButton!
     @IBOutlet weak var guessButtonOutlet: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
     
@@ -24,7 +25,7 @@ class ViewController: UIViewController {
         let userInput = guessHereField.text!
         
         guard let guess = Int(userInput) else {
-            feedbackLabel.text = "You didn't give me a number! 🤔"
+            feedbackLabel.text = "You didn't give me a number!"
             return
         }
         
@@ -36,6 +37,12 @@ class ViewController: UIViewController {
         
         restart()
     }
+    
+    
+    
+    
+    
+    
     
     // MARK: Properties
     var randomNumber = 0
@@ -54,19 +61,20 @@ class ViewController: UIViewController {
     //MARK: Functions
     
     func makeAGuess(_ guess: Int) {
-        guard guess >= 1 && guess <= 100 else {
-            feedbackLabel.text = "Your number wasn't between 0 and 100 you dangus"
+        guard guess >= 1 && guess <= maximumNumber else {
+            feedbackLabel.text = "Your number wasn't between 0 and \(maximumNumber) you dangus"
             return
         }
-        
+        guard guessesRemaining > 0 else {
+            feedbackLabel.text = "You lose!! Sorry BRO"
+            setUpUIForRestart()
+            return
+        }
         if guess == randomNumber {
             feedbackLabel.text = "You Win!!! Congrats"
         
-            guard guessesRemaining > 0 else {
-                feedbackLabel.text = "You lose!! Sorry BRO"
-                setUpUIForRestart()
-                return
-            }
+            
+            
         } else if guess < randomNumber {
             feedbackLabel.text = "Guess HIGHER"
             
@@ -80,6 +88,8 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
     func restart() {
         // new random number
         randomNumber = Int.random(in: minimumNumber...maximumNumber)
@@ -90,7 +100,7 @@ class ViewController: UIViewController {
         // enable text field
         guessButtonOutlet.isEnabled = true
         // hide play again button
-        playAgainButtonOUtlet.isHidden = true
+        playAgainButtonOutlet.isHidden = true
         // show guess button
         guessButtonOutlet.isHidden = false
         // reset feedback label
@@ -99,6 +109,9 @@ class ViewController: UIViewController {
         guessesRemainingLabel.text = "You have \(guessesRemaining) guesses left."
         // Set instruction label
         instructionsLabel.text = "Please enter a number between 1 and \(maximumNumber)"
+        // set guess here re-enabled
+        guessHereField.isEnabled = true
+        
     }
     func setUpUIForRestart() {
         
@@ -109,7 +122,7 @@ class ViewController: UIViewController {
         guessButtonOutlet.isHidden = true
         
         //Unhide play again button
-        playAgainButtonOUtlet.isHidden = false
+        playAgainButtonOutlet.isHidden = false
         
     }
 }
